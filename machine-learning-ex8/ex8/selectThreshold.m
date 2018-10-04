@@ -28,9 +28,11 @@ for epsilon = min(pval):stepsize:max(pval)
     tp = sum((predictions == 1) & (yval == 1));
     fn = sum((predictions == 0) & (yval == 1));
     
+    % Compute precision and recall.
     prec = tp / (tp + fp);
     rec = tp / (tp + fn);
 
+    % Compute F-1 score.
     F1 = (2 * prec * rec) / (prec + rec);
 
 
